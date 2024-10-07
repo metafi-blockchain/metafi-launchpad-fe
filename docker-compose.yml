@@ -1,0 +1,14 @@
+version: "2"
+services:
+  unime-fund-web:
+    container_name: blastfi-app-frontend
+    restart: always
+    build: 
+      dockerfile: Dockerfile
+      context: ./
+    volumes: 
+      - /app/node_modules
+      - ./:/app
+    ports:
+      - 3000:3000   
+      

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  blastfi-app-frontend:
+    image: blastfi-app-frontend:1.1.3
+    ports:
+      - 8080:3000
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+      

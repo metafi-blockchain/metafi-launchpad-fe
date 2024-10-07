@@ -1,0 +1,49 @@
+.bf-tokenmetrics {
+	padding: 50px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	border: 1px rgba(255, 255, 255, 0.2) solid;
+	overflow: hidden;
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - 39px),
+		100% calc(100% - 40px),
+		calc(100% - 275px) 100%,
+		calc(100% - 276px) 100%,
+		0 100%
+	);
+    @media(max-width:767px){
+        padding: 0 0 30px;
+    }
+	&::after {
+		content: '';
+		position: absolute;
+		height: 40px;
+		width: 250px;
+		right: 0;
+		bottom: 0;
+		border: 1px rgba(255, 255, 255, 0.2) solid;
+		border-right: 0;
+		border-bottom: 0;
+		transform: skewX(-45deg);
+	}
+}
+
+.bf-project-details{
+    .bf-section-title{
+        @media(max-width:767px){
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 3px;
+            button{
+                margin: 0;
+                width: calc(50% - 10px);
+                text-align: left;
+                letter-spacing: -1px;
+            }
+        }
+    }
+}

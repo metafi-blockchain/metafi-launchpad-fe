@@ -1,0 +1,114 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba($color: #141626, $alpha: 0.65);
+    .mf-navbar {
+      height: 85px;
+      display: flex;
+      align-items: center;
+      gap: 74px;
+      @media (max-width: 1199px) {
+        height: 70px;
+        gap: 40px;
+      }
+      .mf-logo {
+        img {
+          height: 48px;
+        }
+      }
+      .mf-navbar-nav {
+        position: relative;
+        transition: all ease-in-out 0.3s;
+        display: flex;
+        align-items: center;
+        flex: 1;
+        @media (max-width: 767px) {
+          ul {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba($color: #151740, $alpha: 0.8);
+            backdrop-filter: blur(5px);
+            padding: 30px !important;
+            z-index: 999;
+            transform: translateX(100%);
+            transition: all ease-in-out 0.3s;
+            &.show {
+              transform: translateX(0);
+            }
+          }
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            a {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              height: 85px;
+              padding: 30px 60px;
+              font-weight: bold;
+              color: #b7b6b6;
+              text-decoration: none;
+              transition: all ease-in-out 0.3s;
+              line-height: 20px;
+              @media (max-width: 1199px) {
+                height: 70px;
+                padding: 20px 30px;
+              }
+              @media (max-width: 991px) {
+                font-size: 14px;
+              }
+              &:hover {
+                color: #fff;
+              }
+              &.active {
+                color: #ffffff;
+                background-color: #0261e6;
+              }
+            }
+          }
+        }
+        .mf-navbar-wallet {
+          display: inline-flex;
+          align-items: center;
+          margin-left: auto;
+          gap: 15px;
+        }
+        .mf-close-menu,
+        .mf-open-menu {
+          display: none;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          width: 40px;
+          border: 0;
+          background-color: transparent;
+          padding: 0;
+          img {
+            height: 30px;
+          }
+          @media (max-width: 767px) {
+            display: inline-flex;
+          }
+        }
+        .mf-close-menu {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+      }
+    }
+  }

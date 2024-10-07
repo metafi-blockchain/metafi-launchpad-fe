@@ -1,0 +1,40 @@
+.bf-description{
+    
+    
+    img{
+        width: 50%;
+        object-fit: cover;
+        margin: 1em 0em;
+        // aspect-ratio: 16 / 1;
+        border-radius: 10px;
+        @media(max-width:767px){
+            width: 100%;
+        }
+    }
+    .col-lg-3{
+        position: sticky;
+        top: 80px;
+        height: 100%;
+    }
+    a{
+        color: #FCFC06;
+        text-decoration: none;
+    }
+    .col-lg-9 a::after{
+        content: "↗";
+    }
+}
+
+.list{
+    a{
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.5;
+       
+    }
+    a.active,a:hover{
+        opacity: 1;
+    }
+  
+}
+

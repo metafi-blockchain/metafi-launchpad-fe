@@ -1,0 +1,145 @@
+.bf-your-allowcation {
+	.bf-section-title {
+		font-size: 20px;
+		@media (max-width: 767px) {
+			font-size: 15px;
+		}
+	}
+	.table-responsive {
+		border: 1px rgba($color: #fff, $alpha: 0.2) dashed;
+		background-color: rgba($color: #fff, $alpha: 0.02);
+		backdrop-filter: blur(3px);
+		padding: 10px 10px 0;
+	}
+	table {
+		font-family: Plateia, sans-serif;
+		font-size: 14px;
+		background-color: transparent;
+		> :not(caption) > * > * {
+			border: 0;
+		}
+		thead {
+			th {
+				color: rgba($color: #fff, $alpha: 0.6);
+				padding-bottom: 15px;
+				&:first-child {
+					padding-left: 20px;
+				}
+				&:last-child {
+					padding-right: 20px;
+				}
+				&.no {
+					width: 72px;
+				}
+				&.action {
+					width: 190px;
+				}
+			}
+		}
+		tbody {
+			td {
+				&:last-child {
+					padding-right: 20px;
+				}
+				&.no {
+					text-align: center;
+				}
+				&.action {
+					button {
+						padding: 5px 10px 8px;
+						font-size: 14px;
+						border: 1px #fcfc06 solid;
+						background-color: transparent;
+						color: #fcfc06;
+						transition: all ease-in-out 0.3s;
+						&:disabled {
+							opacity: 0.6;
+						}
+						&:not(:disabled) {
+							&:hover {
+								background-color: #fcfc06;
+								color: #12130d;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.allocation-card {
+		background-color: #5c5c5c;
+		clip-path: polygon(
+			0 0,
+			100% 0,
+			100% calc(100% - 40px),
+			calc(60% + 40px) calc(100% - 40px),
+			60% 100%,
+			0 100%
+		);
+		position: relative;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 15px;
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #171812;
+			clip-path: polygon(
+				1px 1px,
+				calc(100% - 1px) 1px,
+				calc(100% - 1px) calc(100% - 40px - 1px),
+				calc(60% + 40px - 1px) calc(100% - 40px - 1px),
+				calc(60% - 1px) calc(100% - 1px),
+				1px calc(100% - 1px)
+			);
+		}
+		* {
+			position: relative;
+		}
+		>div{
+			&:first-child{
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				font-size: 40px;
+				opacity: .5;
+			}
+		}
+		div{
+			span{
+				font-size: 15px;
+			}
+			h4{
+				font-family: Plateia, sans-serif;
+				color: #fff;
+				font-size: 15px;
+			}
+		}
+		button {
+			font-family: Plateia, sans-serif;
+			padding: 5px 10px 8px;
+			font-size: 14px;
+			border: 1px #fcfc06 solid;
+			background-color: #fcfc06;
+			color: #12130d;
+			transition: all ease-in-out 0.3s;
+			&:disabled {
+				opacity: 0.6;
+			}
+			&:not(:disabled) {
+				&:hover {
+					background-color: transparent;
+					color: #fcfc06;
+				}
+			}
+		}
+	}
+}

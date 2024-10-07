@@ -1,0 +1,165 @@
+.mf-title {
+	text-align: center;
+	font-size: 48px;
+	line-height: 55px;
+	color: #ffffff;
+	margin-bottom: 118px;
+	text-shadow: 1px 1px 57px #306efb, 1px 1px 57px #306efb;
+	text-transform: uppercase;
+	@media (max-width: 1199px) {
+	  font-size: 40px;
+	  margin-bottom: 80px;
+	}
+	@media (max-width: 991px) {
+	  font-size: 35px;
+	  margin-bottom: 40px;
+	}
+	@media (max-width: 767px) {
+	  font-size: 28px;
+	  line-height: 1.3;
+	}
+  }
+.mf-launchpads {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
+  }
+  .mf-launchpad-card {
+	background-color: rgba($color: #27283b, $alpha: 0.59);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 15px;
+	background-image: url(../../../../public/images/card-bg.png);
+	background-size: 100% 100%;
+	padding: 20px 24px;
+	font-size: 14px;
+	@media (max-width: 767px) {
+	  padding: 18px 20px;
+	}
+	&.closed {
+	  .meta {
+		span {
+		  &:last-child {
+			color: #cb1c1c !important;
+		  }
+		}
+	  }
+	}
+	&-header {
+	  .meta {
+		margin-bottom: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		font-size: 14px;
+		font-weight: bold;
+		span {
+		  color: #0184ff;
+		}
+	  }
+	  .image {
+		height: 137px;
+		overflow: hidden;
+		background-color: #306efb;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+		border-radius: 15px;
+		img {
+		  max-width: 100%;
+		  max-height: 100%;
+		  object-fit: contain;
+		}
+	  }
+	  .name {
+		margin-bottom: 14px;
+		font-size: 23px;
+		color: #fff;
+		text-align: center;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		line-height: 28px;
+	  }
+	  .description {
+		line-height: 19px;
+		text-align: center;
+		color: #6b83a8;
+		font-size: 14px;
+		margin-bottom: 30px;
+	  }
+	}
+	&-body {
+	  .socials {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 11px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #333954;
+		span {
+		  display: inline-flex;
+		  align-items: center;
+		  gap: 10px;
+		  a {
+			&:nth-child(2) {
+			  img {
+				height: 18px;
+				width: 18px;
+			  }
+			}
+		  }
+		  img {
+			width: 20px;
+			height: 20px;
+		  }
+		}
+	  }
+	  .stats {
+		border-bottom: 1px solid #333954;
+		margin-bottom: 17px;
+		.row {
+		  --bs-gutter-y: 24px;
+		}
+		span,
+		b {
+		  display: block;
+		  white-space: nowrap;
+		}
+		b {
+		  color: #fff;
+		}
+	  }
+	  .progress {
+		height: 10px;
+		margin: 3px 0;
+		background-color: #3f4050;
+		.progress-bar {
+		  background: rgb(49, 108, 244);
+		  background: linear-gradient(
+			-90deg,
+			rgba(49, 108, 244, 1) 0%,
+			rgba(26, 62, 142, 1) 100%
+		  );
+		}
+	  }
+	  .labels {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 13px;
+	  }
+	  .action {
+		.mf-btn {
+		  width: 100%;
+		}
+	  }
+	}
+  }
+  .mf-completed-launchpads {
+	padding-top: 49px;
+  }
