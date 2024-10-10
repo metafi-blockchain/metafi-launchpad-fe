@@ -1,31 +1,11 @@
 .ai-project-intro {
 	min-height: 230px;
 	height: 100%;
-	border: 1px rgba($color: #FCFC06, $alpha: 0.5) solid;
-	padding: 30px 30px 90px;
-	font-size: 15px;
-	white-space: nowrap;
-	position: relative;
-	&::after {
-		content: '';
-		position: absolute;
-		width: 50%;
-		height: 80px;
-		bottom: -1px;
-		left: -1px;
-		background-color: #12130d;
-		background-image: url('../../../public/images/pattern.png');
-		background-size: auto 50px;
-		background-repeat: repeat-x;
-		background-position: bottom left;
-		border-right: 30px #12130d solid;
-		z-index: 2;
-		@media (max-width: 767px) {
-			height: 40px;
-			background-size: auto 25px;
-			border-right: 20px #12130d solid;
-		}
-	}
+	border-radius: 15px;
+	background-color: rgba(20, 22, 38, 0.85);
+    padding: 20px 24px;
+    font-size: 14px;
+	
 	@media (max-width: 767px) {
 		min-height: 180px;
 		padding: 20px 20px 50px;

@@ -334,7 +334,7 @@ const ProjectDetailPage = () => {
                 <Col lg="9">
                   <div className="d-flex gap-3  align-items-center">
                     <img className="small-logo" src={`https://blastfi.net/assets/${selectedProject.logo}`} alt={selectedProject.name} />
-                    <h1 className="ai-project-d-name glitch pb-2" data-text={selectedProject.name}>{selectedProject.name}</h1>
+                    <h1 className="ai-project-d-name pb-2" data-text={selectedProject.name}>{selectedProject.name}</h1>
                   </div>
                 </Col>
                 <Col lg="3">
@@ -589,21 +589,23 @@ const ProjectDetailPage = () => {
                                       Swap progress<br />
                                       <div className="ai-project-progress">
                                         <div className="ai-project-progress-percent" style={{ width: `${(selectedProject.totalFundParticipated / selectedProject.maxTotalParticipationAllocated || 0) * 100}%` }}></div>
-                                        <div className="ai-project-progress-label">
+                                        
+                                      </div>
+
+                                      <div className="ai-project-progress-label">
                                           <span><b>{((selectedProject.totalFundParticipated / selectedProject.maxTotalParticipationAllocated || 0) * 100).toFixed(2)}%</b></span>
                                           <span><b>{selectedProject.totalFundParticipated.toFixed(4)}/{selectedProject.maxTotalParticipationAllocated} {selectedProject.symbol}</b></span>
                                         </div>
-                                      </div>
                                     </div>
                                     :
                                     <div className="pp-card-col w-100 ai-project-progress-wrap light-progress disabled">
                                       <div className="ai-project-progress text-center">
                                         <div className="ai-project-progress-percent ai-project-progress-percent-card"></div>
-                                        <div className="ai-project-progress-label">
+                                      </div>
+                                      <div className="ai-project-progress-label">
                                           <span className="participants-center" >Allocation round</span>
                                           <span className="participants-center" style={{ top: "8px" }}>{selectedProject.totalCountUserParticipated} Participants</span>
                                         </div>
-                                      </div>
                                     </div>
                                   }
                                 </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
+import { ROUTES } from '../../../../constants';
 
 const BFProjectClosedCard = ({ item }) => {
 	return (
@@ -85,9 +86,9 @@ const BFProjectClosedCard = ({ item }) => {
 					</div>
 				</div>
 				<div className="action">
-					<a href="#" className="mf-btn btn">
+					<Link to={`${ROUTES.PROJECTS}/${item.id}`} className="mf-btn btn">
 						<span>View details</span>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</div>
