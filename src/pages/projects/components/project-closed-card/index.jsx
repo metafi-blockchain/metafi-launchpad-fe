@@ -12,7 +12,7 @@ const BFProjectClosedCard = ({ item }) => {
 					<span>Closed</span>
 				</div>
 				<div className="image">
-					<img src="images/solana.png" alt="" />
+					<img src={item.logo ? `https://blastfi.net/assets/${item.logo}` : "images/solana.png"} alt="" />
 				</div>
 				<h3 className="name">{item.name}</h3>
 				<div className="description">{item.description}</div>

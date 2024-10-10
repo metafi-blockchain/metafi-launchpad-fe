@@ -10,9 +10,12 @@
 	overflow: hidden;
 	color: #fff;
 	border-color: rgb(49, 108, 244) !important;
-	span {
+	span, img {
 	  position: relative;
+	  opacity: 2;
+	  color: #fff;
 	}
+
 	&::before {
 	  content: '';
 	  position: absolute;
