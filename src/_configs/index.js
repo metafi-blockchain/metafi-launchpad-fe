@@ -32,6 +32,8 @@ export const NODE_URI = {
     81457: ["https://rpc.blast.io"]
 };
 
+
+
 export const KYC_BACK_END_URI = "https://bscpad.com";
 
 
@@ -58,5 +60,4 @@ export const chainList = {
        },
        blockExplorerUrls: ["https://blastscan.io"]
    }
-
 }
