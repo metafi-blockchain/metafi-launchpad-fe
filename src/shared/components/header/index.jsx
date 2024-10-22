@@ -25,7 +25,17 @@ const BFHeader = () => {
   const [balancePadTokenBSC] = useState(0);
   const [balancePadTokenETH] = useState(0);
   const [showKYC, setShowKyc] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
   const { account, library, error, chainId } = useActiveWeb3React()
+
+  const handleToggleOpenMenu = (show) => {
+    setShowMenu(show);
+    if(show) {
+      $('body').addClass('overflow-hidden');
+    } else {
+      $('body').removeClass('overflow-hidden');
+    }
+  }
 
   //login wallet
   useEffect(() => {
@@ -133,11 +143,11 @@ const BFHeader = () => {
             <div className="mf-navbar">
               <Link className="mf-logo" to={""}><img src="images/metafi.png" alt="" /></Link>
               <div className="mf-navbar-nav">
-                <ul id="MainMenu">
+                <ul id="MainMenu" className={showMenu ? 'show' : ''}>
                   <li><Link className="active" to={ROUTES.PROJECTS}>Launchpad</Link></li>
                   <li><Link to=''>Staking</Link></li>
-                  <button type="button" className="mf-close-menu" id="btnCloseMenu">
-                    <img src="assets/images/close.svg" alt=""/>
+                  <button type="button" className="mf-close-menu" id="btnCloseMenu" onClick={() => handleToggleOpenMenu(false)}>
+                    <img src="images/close.svg" alt=""/>
                   </button>
                 </ul>
                 <div className="mf-navbar-wallet">
@@ -161,7 +171,7 @@ const BFHeader = () => {
                         </>
                     }
 
-                  <button type="button" className="mf-open-menu" id="btnOpenMenu">
+                  <button type="button" className="mf-open-menu" id="btnOpenMenu" onClick={() => handleToggleOpenMenu(true)}>
                     <img src="images/menu.svg" alt=""/>
                   </button>
                 </div>

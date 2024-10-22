@@ -1,34 +1,27 @@
-import React from "react";
-import "./index.scss";
+import React from 'react';
+import './index.scss';
 
 const BFTokenInformation = ({ showAddToken, onAddToken, selectedProject }) => {
-    return <div className="bf-token-information">
-        <div className="title">Token information</div>
-        <div className="bf-token-information-inner">
-            <div className="table-responsive">
-                <table className="table mb-0">
-                    <tbody>
-                        <tr>
-                            <td>Name</td>
-                            <td className="text-end">{selectedProject.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Token Symbol</td>
-                            <td className="text-end">{selectedProject.projectTokenSymbol}</td>
-                        </tr>
-                        <tr>
-                            <td colSpan={2}>
-                                {
-                                    showAddToken >= 0 && <button type="button" onClick={onAddToken}>
-                                        +Add token to <b>MetaMask</b>
-                                    </button>
-                                }
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-}
-export default BFTokenInformation
+	return (
+		<div class="pool-information">
+			<img src="images/token-info-bg.png" alt="" class="w-100" />
+			<div class="pool-information-inner">
+				<span class="mb-3">Token information</span>
+				<ul>
+					<li>
+						<span>Name</span>
+						<b>{selectedProject.name}</b>
+					</li>
+					<li>
+						<span>Token Symbol</span>
+						<b>{selectedProject.projectTokenSymbol}</b>
+					</li>
+				</ul>
+				{showAddToken >= 0 && (
+					<button type="button" onClick={onAddToken}>+Add token to MetaMark</button>
+				)}
+			</div>
+		</div>
+	);
+};
+export default BFTokenInformation;
