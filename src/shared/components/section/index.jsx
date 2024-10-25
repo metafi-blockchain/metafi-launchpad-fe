@@ -11,11 +11,11 @@ const MFSection = ({
 	showAddToken
 }) => {
 	return (
-		<div class="mf-detail-tabs">
-			<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-				<li class="nav-item" role="presentation">
+		<div className="mf-detail-tabs">
+			<ul className="nav nav-tabs nav-fill" id="myTab" role="tablist">
+				<li className="nav-item" role="presentation">
 					<button
-						class="nav-link active"
+						className="nav-link active"
 						id="description-tab"
 						data-bs-toggle="tab"
 						data-bs-target="#description-tab-pane"
@@ -27,9 +27,9 @@ const MFSection = ({
 						description
 					</button>
 				</li>
-				<li class="nav-item" role="presentation">
+				<li className="nav-item" role="presentation">
 					<button
-						class="nav-link"
+						className="nav-link"
 						id="pool-info-tab"
 						data-bs-toggle="tab"
 						data-bs-target="#pool-info-tab-pane"
@@ -41,9 +41,9 @@ const MFSection = ({
 						pool info
 					</button>
 				</li>
-				<li class="nav-item" role="presentation">
+				<li className="nav-item" role="presentation">
 					<button
-						class="nav-link"
+						className="nav-link"
 						id="tokenmetrics-tab"
 						data-bs-toggle="tab"
 						data-bs-target="#tokenmetrics-tab-pane"
@@ -55,9 +55,9 @@ const MFSection = ({
 						tokenmetrics
 					</button>
 				</li>
-				<li class="nav-item" role="presentation">
+				<li className="nav-item" role="presentation">
 					<button
-						class="nav-link"
+						className="nav-link"
 						id="your-allocation-tab"
 						data-bs-toggle="tab"
 						data-bs-target="#your-allocation-tab-pane"
@@ -70,80 +70,80 @@ const MFSection = ({
 					</button>
 				</li>
 			</ul>
-			<div class="tab-content" id="myTabContent">
+			<div className="tab-content" id="myTabContent">
 				<BFDescriptionTab data={selectedProject}/>
 				<div
-					class="tab-pane fade"
+					className="tab-pane fade"
 					id="pool-info-tab-pane"
 					role="tabpanel"
 					aria-labelledby="pool-info-tab"
 					tabIndex="0"
 				>
-					<div class="row gx-xl-5">
-						<div class="col-xl-6 col-lg-5">
+					<div className="row gx-xl-5">
+						<div className="col-xl-6 col-lg-5">
 							<BFPoolInformation selectedProject={selectedProject} />
 						</div>
-						<div class="col-xl-6 col-lg-7 ps-xxl-4 ps-xl-0 ps-lg-4">
+						<div className="col-xl-6 col-lg-7 ps-xxl-4 ps-xl-0 ps-lg-4">
 							<BFTokenInformation onAddToken={onAddToken} selectedProject={selectedProject} showAddToken={showAddToken}/>
 							<BFScheduleInformation />
 						</div>
 					</div>
 				</div>
 				<div
-					class="tab-pane fade"
+					className="tab-pane fade"
 					id="tokenmetrics-tab-pane"
 					role="tabpanel"
 					aria-labelledby="tokenmetrics-tab"
 					tabIndex="0"
 				>
-					<div class="tokenmetrics">
-						<img src="images/token-bg.png" class="w-100" alt="" />
-						<div class="tokenmetrics-inner">
-							<div class="row gx-lg-4 h-100 align-items-lg-center">
-								<div class="col-lg-3 col-md-7 order-lg-1 order-2">
-									<div class="legends">
-										<div class="legend legend-1">
+					<div className="tokenmetrics">
+						<img src="images/token-bg.png" className="w-100" alt="" />
+						<div className="tokenmetrics-inner">
+							<div className="row gx-lg-4 h-100 align-items-lg-center">
+								<div className="col-lg-3 col-md-7 order-lg-1 order-2">
+									<div className="legends">
+										<div className="legend legend-1">
 											<span>Seed</span>
 											<b>7.5%</b>
 										</div>
-										<div class="legend legend-2">
+										<div className="legend legend-2">
 											<span>Partners & Advisors</span>
 											<b>9.5%</b>
 										</div>
-										<div class="legend legend-3">
+										<div className="legend legend-3">
 											<span>Team & Development</span>
 											<b>10%</b>
 										</div>
-										<div class="legend legend-4">
+										<div className="legend legend-4">
 											<span>Community & Ecosystem Growth</span>
 											<b>22%</b>
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 mb-4 mb-lg-0 order-lg-2 order-1 text-center">
-									<div class="token-img">
+								<div className="col-lg-6 mb-4 mb-lg-0 order-lg-2 order-1 text-center">
+									<div className="token-img">
 										<img src="images/token.png" alt="" />
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-5 order-3">
-									<div class="legends">
-										<div class="legend legend-5">
+								<div className="col-lg-3 col-md-5 order-3">
+									<div className="legends">
+										<div className="legend legend-5">
 											<span>Liquidity</span>
 											<b>15%</b>
 										</div>
-										<div class="legend legend-6">
+										<div className="legend legend-6">
 											<span>Reserve</span>
 											<b>1.8%</b>
 										</div>
-										<div class="legend legend-7">
+										<div className="legend legend-7">
 											<span>Staking Rewards</span>
 											<b>25%</b>
 										</div>
-										<div class="legend legend-8">
+										<div className="legend legend-8">
 											<span>Public Round</span>
 											<b>3.5%</b>
 										</div>
-										<div class="legend legend-9">
+										<div className="legend legend-9">
 											<span>Private Round</span>
 											<b>5%</b>
 										</div>
@@ -154,15 +154,15 @@ const MFSection = ({
 					</div>
 				</div>
 				<div
-					class="tab-pane fade"
+					className="tab-pane fade"
 					id="your-allocation-tab-pane"
 					role="tabpanel"
 					aria-labelledby="your-allocation-tab"
 					tabIndex="0"
 				>
-					<div class="allocation">
-						<div class="allocation-inner">
-							<div class="allocation-head">
+					<div className="allocation">
+						<div className="allocation-inner">
+							<div className="allocation-head">
 								<div>NO.</div>
 								<div>ALLOCATION</div>
 								<div>PERCENTAGE</div>
@@ -170,8 +170,8 @@ const MFSection = ({
 								<div>CLAIMED</div>
 								<div>ACTION</div>
 							</div>
-							<div class="allocation-body">
-								<div class="allocation-item">
+							<div className="allocation-body">
+								<div className="allocation-item">
 									<div>1</div>
 									<div>
 										<span>ALLOCATION</span>0.0000
@@ -186,12 +186,12 @@ const MFSection = ({
 										<span>CLAIMED</span>0.000
 									</div>
 									<div>
-										<button type="button" class="mf-btn btn">
+										<button type="button" className="mf-btn btn">
 											<span>CLAIM TOKENS</span>
 										</button>
 									</div>
 								</div>
-								<div class="allocation-item">
+								<div className="allocation-item">
 									<div>2</div>
 									<div>
 										<span>ALLOCATION</span>0.0000
@@ -206,12 +206,12 @@ const MFSection = ({
 										<span>CLAIMED</span>0.000
 									</div>
 									<div>
-										<button type="button" class="mf-btn btn">
+										<button type="button" className="mf-btn btn">
 											<span>CLAIM TOKENS</span>
 										</button>
 									</div>
 								</div>
-								<div class="allocation-item">
+								<div className="allocation-item">
 									<div>3</div>
 									<div>
 										<span>ALLOCATION</span>0.0000
@@ -226,7 +226,7 @@ const MFSection = ({
 										<span>CLAIMED</span>0.000
 									</div>
 									<div>
-										<button type="button" class="mf-btn btn">
+										<button type="button" className="mf-btn btn">
 											<span>CLAIM TOKENS</span>
 										</button>
 									</div>

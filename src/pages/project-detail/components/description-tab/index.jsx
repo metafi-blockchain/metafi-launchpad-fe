@@ -18,7 +18,7 @@ const BFDescriptionTab = ({ data }) => {
 						<div class="menu-inner">
 							<span>SECTIONS</span>
 							<ul>
-								{data.articles.map((item, index) => (
+								{data?.articles.map((item, index) => (
 									<li key={item.id}>
 										<a
 											href={'/projects/1#article' + item.id}
@@ -34,7 +34,7 @@ const BFDescriptionTab = ({ data }) => {
 				</div>
 				<div class="col-lg-9 ps-lg-5">
 					<div class="text-content">
-						{data.articles.map((item, key) => (
+						{data?.articles.map((item, key) => (
 							<>
 								{key === 0 ? (
 									<h2 id={'article' + item.id} key={item.id}>

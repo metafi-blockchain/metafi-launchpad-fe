@@ -14,11 +14,11 @@ const BFPoolInformation = ({ selectedProject }) => {
 
 						<b>
 							{' '}
-							{selectedProject.openTime === undefined ? (
+							{selectedProject?.openTime === undefined ? (
 								<td className="text-end">TBA</td>
 							) : (
 								<td className="text-end">
-									{moment(selectedProject.openTime * 1000 || 0)
+									{moment(selectedProject?.openTime * 1000 || 0)
 										.utc()
 										.format('MM-DD HH:mm')}{' '}
 									UTC
@@ -30,11 +30,11 @@ const BFPoolInformation = ({ selectedProject }) => {
 						<span>FCFS Opens</span>
 						<b>
 							{' '}
-							{selectedProject.fcfsOpenTime === undefined ? (
+							{selectedProject?.fcfsOpenTime === undefined ? (
 								<td className="text-end">TBA</td>
 							) : (
 								<td className="text-end">
-									{moment(selectedProject.fcfsOpenTime * 1000 || 0)
+									{moment(selectedProject?.fcfsOpenTime * 1000 || 0)
 										.utc()
 										.format('MM-DD HH:mm')}{' '}
 									UTC
@@ -46,11 +46,11 @@ const BFPoolInformation = ({ selectedProject }) => {
 						<span>Closes</span>
 						<b>
 							{' '}
-							{selectedProject.closeTime === undefined ? (
+							{selectedProject?.closeTime === undefined ? (
 								<td className="text-end">TBA</td>
 							) : (
 								<td className="text-end">
-									{moment(selectedProject.closeTime * 1000 || 0)
+									{moment(selectedProject?.closeTime * 1000 || 0)
 										.utc()
 										.format('MM-DD HH:mm')}{' '}
 									UTC
@@ -62,14 +62,14 @@ const BFPoolInformation = ({ selectedProject }) => {
 						<span>Swap Rate</span>
 						<b>
 							{' '}
-							{selectedProject.openTime !== undefined ? (
+							{selectedProject?.openTime !== undefined ? (
 								<td className="text-end">
 									<span id="idBusdConvert">
-										<span>1 {selectedProject.symbol}</span>
+										<span>1 {selectedProject?.symbol}</span>
 										<span>
 											{' '}
 											= {selectedProject['rate'].toFixed(4)}{' '}
-											{selectedProject.projectTokenSymbol}
+											{selectedProject?.projectTokenSymbol}
 										</span>
 									</span>
 								</td>
@@ -84,10 +84,10 @@ const BFPoolInformation = ({ selectedProject }) => {
 						<span>Cap</span>
 						<b>
 							{' '}
-							{selectedProject.openTime !== undefined ? (
+							{selectedProject?.openTime !== undefined ? (
 								<td className="text-end">
-									{selectedProject.maxTotalParticipationAllocated}{' '}
-									{selectedProject.symbol}
+									{selectedProject?.maxTotalParticipationAllocated}{' '}
+									{selectedProject?.symbol}
 								</td>
 							) : (
 								<td className="text-end">TBA</td>
@@ -96,16 +96,16 @@ const BFPoolInformation = ({ selectedProject }) => {
 					</li>
 					<li>
 						<span>Total Users Participated</span>
-						<b>{selectedProject.totalCountUserParticipated || 0}</b>
+						<b>{selectedProject?.totalCountUserParticipated || 0}</b>
 					</li>
 					<li>
 						<span>Total Funds Swapped</span>
 						<b>
 							{' '}
-							{selectedProject.openTime !== undefined ? (
+							{selectedProject?.openTime !== undefined ? (
 								<td className="text-end">
-									{selectedProject.totalFundParticipated.toFixed(4) || 0}{' '}
-									{selectedProject.symbol || ''}
+									{selectedProject?.totalFundParticipated.toFixed(4) || 0}{' '}
+									{selectedProject?.symbol || ''}
 								</td>
 							) : (
 								<td className="text-end">0</td>
@@ -114,7 +114,7 @@ const BFPoolInformation = ({ selectedProject }) => {
 					</li>
 					<li>
 						<span>Access Type</span>
-						<b>{selectedProject.isPrivate ? "PRIVATE" : "PUBLIC"}</b>
+						<b>{selectedProject?.isPrivate ? "PRIVATE" : "PUBLIC"}</b>
 					</li>
 				</ul>
 			</div>

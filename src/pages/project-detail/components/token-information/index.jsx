@@ -10,11 +10,11 @@ const BFTokenInformation = ({ showAddToken, onAddToken, selectedProject }) => {
 				<ul>
 					<li>
 						<span>Name</span>
-						<b>{selectedProject.name}</b>
+						<b>{selectedProject?.name}</b>
 					</li>
 					<li>
 						<span>Token Symbol</span>
-						<b>{selectedProject.projectTokenSymbol}</b>
+						<b>{selectedProject?.projectTokenSymbol}</b>
 					</li>
 				</ul>
 				{showAddToken >= 0 && (
