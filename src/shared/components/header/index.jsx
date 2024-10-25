@@ -2,15 +2,14 @@ import exactMath from 'exact-math';
 import $ from 'jquery';
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useActiveWeb3React } from '../../../hook';
-import { useKycStatus, useLatestBlockNumber, usePadTokenBalance, useWeb3Utils } from "../../../hook/useState";
+import {useLatestBlockNumber, useWeb3Utils } from "../../../hook/useState";
 import { ACTION_CONST, ROUTES } from "../../constants";
 import BFConnectWallet from '../connect-wallet';
 import BFYourWallet from '../your-wallet';
 import Web3Helper from '../../utils/walletExtensionUtils';
 import "./index.scss";
-import { WHITE_LIST } from '../../../constants';
 
 const BFHeader = () => {
   const dispatch = useDispatch();
@@ -62,12 +61,7 @@ const BFHeader = () => {
 
   }, [latestBlock, walletUtils, account, dispatch]);
 
-  useEffect(() => {
 
-    if(!account || !WHITE_LIST.find(item => item.toLowerCase() === account.toLowerCase())) return
-      
-   
-  }, [account])
 
   useEffect(() => {
     dispatch({
