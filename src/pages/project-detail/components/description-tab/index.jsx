@@ -5,24 +5,24 @@ import './index.scss';
 const BFDescriptionTab = ({ data }) => {
 	return (
 		<div
-			class="tab-pane fade description-tab-pane show active"
+			className="tab-pane fade description-tab-pane show active"
 			id="description-tab-pane"
 			role="tabpanel"
 			aria-labelledby="description-tab"
 			tabIndex="0"
 		>
-			<div class="row gx-lg-5">
-				<div class="col-lg-3 pe-lg-0">
-					<div class="menu">
-						<img src="images/menu-bg.png" alt="" class="w-100" />
-						<div class="menu-inner">
+			<div className="row gx-lg-5">
+				<div className="col-lg-3 pe-lg-0">
+					<div className="menu">
+						<img src="images/menu-bg.png" alt="" className="w-100" />
+						<div className="menu-inner">
 							<span>SECTIONS</span>
 							<ul>
 								{data?.articles.map((item, index) => (
 									<li key={item.id}>
 										<a
 											href={'/projects/1#article' + item.id}
-											class={`${index == 0 ? 'active' : ''} `}
+											className={`${index == 0 ? 'active' : ''} `}
 										>
 											{item.title}
 										</a>
@@ -32,8 +32,8 @@ const BFDescriptionTab = ({ data }) => {
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-9 ps-lg-5">
-					<div class="text-content">
+				<div className="col-lg-9 ps-lg-5">
+					<div className="text-content">
 						{data?.articles.map((item, key) => (
 							<>
 								{key === 0 ? (

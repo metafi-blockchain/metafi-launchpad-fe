@@ -4,9 +4,9 @@ import './index.scss';
 
 const BFPoolInformation = ({ selectedProject }) => {
 	return (
-		<div class="pool-information pool">
-			<img src="images/pool-info-bg.png" alt="" class="w-100 h-100" />
-			<div class="pool-information-inner">
+		<div className="pool-information pool">
+			<img src="images/pool-info-bg.png" alt="" className="w-100 h-100" />
+			<div className="pool-information-inner">
 				<span>POOL INFORMATION</span>
 				<ul>
 					<li>

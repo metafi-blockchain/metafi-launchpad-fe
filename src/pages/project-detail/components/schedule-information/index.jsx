@@ -6,10 +6,10 @@ import { useInfoRound } from '../../../../hook/useState';
 const BFScheduleInformation = () => {
     const roundInfo = useInfoRound();
 	return (
-		<div class="pool-information schedule">
-			<img src="images/schedule-bg.png" alt="" class="w-100" />
-			<div class="pool-information-inner">
-				<span class="mb-3">Schedule</span>
+		<div className="pool-information schedule">
+			<img src="images/schedule-bg.png" alt="" className="w-100" />
+			<div className="pool-information-inner">
+				<span className="mb-3">Schedule</span>
 				<ul>
 					<li>
 						<span>Round</span>

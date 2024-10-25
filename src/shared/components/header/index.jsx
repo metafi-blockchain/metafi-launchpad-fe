@@ -1,30 +1,24 @@
 import exactMath from 'exact-math';
 import $ from 'jquery';
 import React, { useEffect, useState } from "react";
-import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { useActiveWeb3React } from '../../../hook';
 import { useKycStatus, useLatestBlockNumber, usePadTokenBalance, useWeb3Utils } from "../../../hook/useState";
-import { getKYC } from '../../../redux/services/account.api';
 import { ACTION_CONST, ROUTES } from "../../constants";
 import BFConnectWallet from '../connect-wallet';
 import BFYourWallet from '../your-wallet';
 import Web3Helper from '../../utils/walletExtensionUtils';
-import BFButton from '../button';
 import "./index.scss";
 import { WHITE_LIST } from '../../../constants';
 
 const BFHeader = () => {
   const dispatch = useDispatch();
   const walletUtils = useWeb3Utils()
-  const bscPadTokenBalance = usePadTokenBalance();
   const latestBlock = useLatestBlockNumber()
-  const kycStatus = useKycStatus();
 
   const [balancePadTokenBSC] = useState(0);
   const [balancePadTokenETH] = useState(0);
-  const [showKYC, setShowKyc] = useState(false)
   const [showMenu, setShowMenu] = useState(false);
   const { account, library, error, chainId } = useActiveWeb3React()
 
@@ -71,9 +65,7 @@ const BFHeader = () => {
   useEffect(() => {
 
     if(!account || !WHITE_LIST.find(item => item.toLowerCase() === account.toLowerCase())) return
-       
-    setShowKyc(true)
-    getKYCAddress(account);
+      
    
   }, [account])
 
@@ -84,59 +76,8 @@ const BFHeader = () => {
     })
   }, [balancePadTokenBSC, balancePadTokenETH, dispatch])
 
-  //get kyc
-  const getKYCAddress = (address) => {
 
-    getKYC(address, 'state').then(response => {
-      address = address.toLowerCase()
-      if (response) {
-        const state = response.state;
-        if (state === 1) {
-          return dispatch({
-            type: ACTION_CONST.GET_KYC_INFO,
-            data: 'START'
-          })
-        }
-        if (state === 2) {
-          return dispatch({
-            type: ACTION_CONST.GET_KYC_INFO,
-            data: 'PENDING'
-          })
-        }
-        if (state === 3) {
-          return dispatch({
-            type: ACTION_CONST.GET_KYC_INFO,
-            data: 'APPROVED'
-          })
-        }
-        if (state === 4) {
-          return dispatch({
-            type: ACTION_CONST.GET_KYC_INFO,
-            data: 'ERROR'
-          })
-        }
-      }
 
-    }).catch(err => {
-      console.log(err);
-    })
-  }
-
-  const handleOnclickKyc = () => {
-    getKYC(account, 'url').then(data => {
-      if (data) {
-        const url = data.url
-        window.open(url, "_blank")
-      }
-
-    }).catch(err => {
-      console.log(err);
-    })
-  }
-
-  const handleTabChange = () => {
-    $('.navbar-toggler').trigger('click');
-  }
 
   return <header>
           <div className="container">
@@ -155,19 +96,6 @@ const BFHeader = () => {
                       !account ? <BFConnectWallet /> :
                         <>
                           <BFYourWallet />
-                          {showKYC&&
-                            <>
-                              {kycStatus === 'START' &&
-                                <BFButton className='ms-3' buttonText='KYC' icon={<i className="fas fa-bolt me-1"></i>} onClick={() => handleOnclickKyc()} />}
-                              {kycStatus === 'PENDING' &&
-                                <BFButton className='ms-3' buttonText="KYC" icon={<i className="fas fa-exclamation-triangle me-1"></i>} onClick={() => handleOnclickKyc()} />}
-                              {kycStatus === 'APPROVED' &&
-                                <BFButton className='ms-3' buttonText='KYC' variant="success readonly" icon={<i className="fas fa-check me-1"></i>} />}
-                              {kycStatus === 'ERROR' &&
-                                <BFButton className='ms-3' buttonText="KYC" variant="danger" icon={<i className="fas fa-times me-1"></i>} onClick={() => handleOnclickKyc()} />}
-                            </>
-                          }
-
                         </>
                     }
 

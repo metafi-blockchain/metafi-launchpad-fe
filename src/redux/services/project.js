@@ -6,17 +6,12 @@ import { BACKEND_URI_PROJECTS, BACKEND_API_PROJECT_DETAILS } from "../../_config
 export const getProjects = async () => {
   try {
     const result = await axios.get(`${BACKEND_URI_PROJECTS}`);
-    debugger
     // console.log(result);
     if (result.status === 200) {
       return result.data.data;
     }
-
-    debugger
-
     return [];
   } catch (error) {
-    debugger
     const response = error.response;
     console.log(response);
     return [];
