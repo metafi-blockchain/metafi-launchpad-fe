@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.scss';
 import { ROUTES } from '../../../../constants';
 
 const BFProjectClosedCard = ({ item }) => {
@@ -12,7 +11,14 @@ const BFProjectClosedCard = ({ item }) => {
 					<span>Closed</span>
 				</div>
 				<div className="image">
-					<img src={item.logo ? `https://blastfi.net/assets/${item.logo}` : "images/solana.png"} alt="" />
+					<img
+						src={
+							item.logo
+								? `https://blastfi.net/assets/${item.logo}`
+								: 'images/solana.png'
+						}
+						alt=""
+					/>
 				</div>
 				<h3 className="name">{item.name}</h3>
 				<div className="description">{item.description}</div>
@@ -22,18 +28,23 @@ const BFProjectClosedCard = ({ item }) => {
 				<div className="socials">
 					<span>Available on</span>
 					<span>
-                        {item.telegram && <a href={item.telegram} target="_blank">
-							<img src="images/telegram.svg" alt="telegram" />
-						</a>}
-						
-                        {item.twitter && <a href={item.twitter} target="_blank">
-							<img src="images/x.svg" alt="telegram" />
-						</a>}
-						
-                        {item.twitter && <a href={item.globe} target="_blank">
-							<img src="images/globe.svg" alt="telegram" />
-						</a>}
-						
+						{item.telegram && (
+							<a href={item.telegram} target="_blank">
+								<img src="images/telegram.svg" alt="telegram" />
+							</a>
+						)}
+
+						{item.twitter && (
+							<a href={item.twitter} target="_blank">
+								<img src="images/x.svg" alt="telegram" />
+							</a>
+						)}
+
+						{item.twitter && (
+							<a href={item.globe} target="_blank">
+								<img src="images/globe.svg" alt="telegram" />
+							</a>
+						)}
 					</span>
 				</div>
 				<div className="stats">
