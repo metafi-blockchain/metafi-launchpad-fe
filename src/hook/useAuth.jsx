@@ -7,7 +7,7 @@ import { bscConnector, injected } from '../library/connectors';
 import { connectorLocalStorageKey, ConnectorNames } from '../library/literals';
 import { MESSAGES } from '../constants';
 import {  defaultChainId } from '../_configs';
-import { AddChainToMetaMask, switchNetWork } from '../shared/utils/metamaskUtils';
+import {  switchNetWork } from '../shared/utils/metamaskUtils';
 
 function useAuth() {
   const { activate, deactivate } = useWeb3React();

@@ -2,6 +2,7 @@
 import { Contract } from '@ethersproject/contracts'
 import { getContract } from '../utils'
 import ERC20_ABI from '../contracts/erc20.abi.json'
+import { useMemo } from 'react'
 const { useActiveWeb3React } = require(".")
 
 export function useContract(address, ABI, withSignerIfPossible ) {
@@ -23,13 +24,13 @@ export function useTokenContract(tokenAddress, withSignerIfPossible) {
 }
 
 // account is optional
-export function getContract(address, ABI, library, account){
-    if (!isAddress(address) || address === AddressZero) {
-      throw Error(`Invalid 'address' parameter '${address}'.`)
-    }
+// export function getContract(address, ABI, library, account){
+//     // if (!isAddress(address) || address === AddressZero) {
+//     //   throw Error(`Invalid 'address' parameter '${address}'.`)
+//     // }
   
-    return new Contract(address, ABI, getProviderOrSigner(library, account) )
-  }
+//     return new Contract(address, ABI, getProviderOrSigner(library, account) )
+//   }
   
 // account is not optional
 export function getSigner(library, account){
