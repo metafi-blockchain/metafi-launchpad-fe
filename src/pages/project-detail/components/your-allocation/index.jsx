@@ -49,7 +49,7 @@ const BFYourAllocation = (props) => {
         <div className='bf-your-allowcation'>
             <div className="d-lg-none d-block">
                 {
-                    allocationInfo?.length <= 0 ? <div className='bf-nodata'>No data</div> : <></>
+                    allocationInfo?.length <= 0 ? <div className='mf-nodata'>No data</div> : <></>
                 }
                 {
                     (allocationInfo.length > 0 && layout === 1) &&
@@ -110,7 +110,7 @@ const BFYourAllocation = (props) => {
             </div>
             <div className="d-none d-lg-block">
                 {
-                    allocationInfo?.length <= 0 ? <div className='bf-nodata'>No data</div> : <div className="table-responsive">
+                    allocationInfo?.length <= 0 ? <div className='mf-nodata'>No data</div> : <div className="table-responsive">
                         <table className="table pp-table-info text-white">
                             <thead>
                                 <tr className="card-header" style={{ border: "none" }}>

@@ -7,8 +7,8 @@ const ClosedProjectsComponent = () => {
 	const closedProjects = useCloseProjects();
 
 	return (
-		<div class="container">
-			<h2 class="mf-title">Incomming Launchpads</h2>
+		<div class="container mb-4">
+			<h2 class="mf-title">Closed Launchpads</h2>
 			{closedProjects.length > 0 ? (
 				<Row className="gx-md-5">
 					{closedProjects.map((item, key) => {
@@ -20,7 +20,7 @@ const ClosedProjectsComponent = () => {
 					})}
 				</Row>
 			) : (
-				<div className="bf-nodata">No projects currently closed</div>
+				<div className="mf-nodata">No projects currently closed</div>
 			)}
 		</div>
 	);

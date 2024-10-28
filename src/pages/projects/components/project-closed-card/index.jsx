@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../../constants';
+import { getCountDown, remainTime } from '../../../../shared/utils/helper';
 
-const BFProjectClosedCard = ({ item }) => {
+const BFProjectClosedCard = ({ item, type = 'closed' }) => {
 	return (
 		<div className="mf-launchpad-card closed">
 			<div className="mf-launchpad-card-header">
@@ -11,18 +12,57 @@ const BFProjectClosedCard = ({ item }) => {
 					<span>Closed</span>
 				</div>
 				<div className="image">
-					<img
-						src={
-							item.logo
-								? `https://blastfi.net/assets/${item.logo}`
-								: 'images/solana.png'
-						}
-						alt=""
-					/>
+					<Link to={`${ROUTES.PROJECTS}/${item.id}`}>
+						<img
+							src={
+								item.logo
+									? `https://blastfi.net/assets/${item.logo}`
+									: 'images/solana.png'
+							}
+							alt=""
+						/>
+					</Link>
 				</div>
 				<h3 className="name">{item.name}</h3>
 				<div className="description">{item.description}</div>
 			</div>
+
+			{
+				(type = 'upcomming' ? (
+					<>
+						{getCountDown(
+							`idOpenTime-${item['contract']}-${item['openTime']}`,
+							item.openTime * 1000,
+							function start() {},
+							function end() {}
+						)}
+						{/* Timing */}
+						{item.state === 'P' ? (
+							<span className="timing">
+								{item.contract === 'TBA' ||
+								!item.contract ||
+								item.openTime === 0 ||
+								Number(item.rate) === 0 ? (
+									<>Opens in TBA</>
+								) : (
+									<>
+										Opens in{' '}
+										<b
+											id={`idOpenTime-${item['contract']}-${item['openTime']}`}
+										>
+											{remainTime(item.openTime * 1000)}
+										</b>
+									</>
+								)}
+							</span>
+						) : (
+							<></>
+						)}
+					</>
+				) : (
+					<></>
+				))
+			}
 
 			<div className="mf-launchpad-card-body">
 				<div className="socials">

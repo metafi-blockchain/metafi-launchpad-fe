@@ -262,3 +262,13 @@ main {
 		background-color: #12130d;
 	}
 }
+
+.mf-nodata {
+	border: 1px solid #474a63;
+	border-radius: 20px;
+	padding: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+}
