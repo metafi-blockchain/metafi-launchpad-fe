@@ -1,7 +1,7 @@
+docker build -t metafi/launchpad-fontend . 
 
-docker stack rm pscpad-front-end
-docker build -t pscpad-front-end:1.1.3 -f Dockerfile .
 
-#docker push roster90/pscpad-front-end:1.0.5
+docker buildx build --platform linux/amd64,linux/arm64 -t metafi/launchpad-fontend:0.1.0 --push .
 
-docker stack deploy --compose-file deployment.yml pscpad-front-end
+
+docker push metafi/launchpad-fontend:0.1.0
